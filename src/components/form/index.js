@@ -32,7 +32,7 @@ class Form extends Component {
           value={job}
           onChange={this.handleChange}
         />
-        <input type="button" value="Submit" onClick={this.submitForm} />
+        <input type="button" value="Submit" onClick={this.handleSubmitForm} />
       </form>
     );
   }
@@ -42,9 +42,9 @@ class Form extends Component {
       [name]: value,
     });
   };
-  submitForm = () => {
+  handleSubmitForm = () => {
     if (this.state.name !== "" && this.state.job !== "") {
-      this.props.handleSubmit(this.state);
+      this.props.onFormSubmit(this.state);
     }
     this.setState(this.initialState);
   };

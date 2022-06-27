@@ -30,7 +30,6 @@ class App extends Component {
   }
   removeCharacter = (index) => {
     const { characters } = this.state;
-
     this.setState({
       characters: characters.filter((character, i) => {
         return i !== index;
@@ -43,7 +42,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>Hello, React!</h1>
-        <Form handleSubmit={this.handleSubmit} />
+        <Form onFormSubmit={this.handleSubmit} />
         <Table characters={characters} removeCharacter={this.removeCharacter}/>
       </div>
     );

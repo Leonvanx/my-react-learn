@@ -16,7 +16,7 @@ class Square extends Component {
       squareNumber: this.props.squareNumber,
       squareValue: this.props.isXNext ? "X" : "O",
     };
-    this.props.addTotalClick(squareItemInfo);
+    this.props.onClick(squareItemInfo);
     if (this.state.squareValue === "") {
       this.setState((state) => ({
         squareValue: this.props.isXNext ? "X" : "O",
@@ -31,16 +31,19 @@ class Square extends Component {
 }
 
 class Board extends Component {
-  state = {
-    squareAllInfo: Array(9).fill(null),
-    isXNext: true,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      squareAllInfo: Array(9).fill(null),
+      isXNext: true,
+    };
+  }
   renderSquare(i) {
     return (
       <Square
         squareNumber={i}
         isXNext={this.state.isXNext}
-        addTotalClick={this.handleAddTotalClick}
+        onClick={this.handleAddTotalClick}
       />
     );
   }
