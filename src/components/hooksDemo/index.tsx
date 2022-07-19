@@ -16,7 +16,7 @@ const Index:React.FC<any> = (props)=> {
   },[data4])
   return (
     <div>
-      <div>数字：{JSON.stringify(data2.list)}</div>
+      <div>数字：{JSON.stringify(data1)}</div>
       <button onClick={() => {setFlag(v => !v)}}>切换</button>
        <div>切换状态：{JSON.stringify(flag)}</div>
     </div>
