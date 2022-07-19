@@ -14,6 +14,9 @@ const Index:React.FC<any> = (props)=> {
     console.log('data2:',data2)
     console.log('data3:',data3)
   },[data1,data2])
+  const changeFlag = () =>{
+   setFlag(flag => !flag)
+  }
   const changeData1 = () =>{
     setData1(value =>{
       value[1] = 2
@@ -29,7 +32,7 @@ const Index:React.FC<any> = (props)=> {
   return (
     <div>
       <div>数字：{JSON.stringify(data1)}</div>
-      <button onClick={() => {setFlag(v => !v)}}>切换</button>
+      <button onClick={() => {changeFlag()}}>切换</button>
       <button onClick={() => {changeData1()}}>改变data1</button>
       <button onClick={() => {changeData2()}}>改变data2</button>
        <div>切换状态：{JSON.stringify(flag)}</div>
